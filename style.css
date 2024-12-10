@@ -437,6 +437,8 @@ p {
     font-family: "Erica One", sans-serif;
     font-size: 2.2rem;
     color: var(--dark);
+    z-index: 1;
+    position: relative;
 }
 
 .button-underline {
@@ -446,7 +448,7 @@ p {
   position: absolute;
   transition: 0.3s;
   bottom: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 
