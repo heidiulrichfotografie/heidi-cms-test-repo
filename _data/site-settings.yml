@@ -1,13 +1,17 @@
 seo:
-  site_name: Example
-  title: Example SEO Title
-  description:
+  site_name: Heidi Ulrich Fotografie
+  title: Heidi Ulrich Fotografie
+  description: >-
+    Ich bin Heidi Ulrich und fotografiere die Schönheit der Natur wie
+    Landschaften, Magische Momente, Naturwunder und Stimmungen in den Bergen und
+    der Natur.
   keywords:
   social_image:
   author:
   favicon_image:
 social:
-  instagram_url:
+  instagram_url: >-
+    https://www.instagram.com/heidiulrichfotografie/
   facebook_url:
   pinterest_url:
   linkedin_url:
@@ -16,9 +20,9 @@ design:
   medium-text_color: '#5a5a5f'
   light-text_color: '#f7f5f3'
   featured-text_color: '#ff0000'
-  dark_color: '#3c3c41'
-  medium_color: '#ede8e4'
-  light_color: '#f7f5f3'
-  v-light_color: '#f9f9f9'
+  dark_color: '#BCC894'
+  medium_color: '#F0CFFE'
+  light_color: '#CDD5B0'
+  v-light_color: '#FAEDCD'
   featured_color: '#6495ed'
   accent_color: '#a74a4a'

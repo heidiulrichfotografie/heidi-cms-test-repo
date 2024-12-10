@@ -22,6 +22,7 @@ section { position: relative; }
 html { 
   scroll-behavior: smooth ;
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+  overflow-x: hidden;
 }
 
 
@@ -105,10 +106,23 @@ html {
 .margin-tb { margin-top: 5%; margin-bottom: 5%; }
 .margin-lr { margin-left: 5%; margin-right: 5%; }
 
+.margin-t-minus-3 {
+  margin-top: -3rem;
+}
+
+.margin-t-minus-9 {
+  margin-top: -9rem;
+}
+
+.margin-t-minus-16 {
+  margin-top: -16rem;
+}
+
 
 .relative { position: relative;}
-.block { position: block;}
-.inline-block { position: inline-block;}
+.block { display: block;}
+.inline-block { display: inline-block; }
+.inline { display: inline ; }
 
 /* ------------ Backgrounds & Background Images  ----------------------- */
 
@@ -117,6 +131,22 @@ html {
 .bg-medium   { background-color: var(--medium); }
 .bg-light    { background-color: var(--light); }
 .bg-v-light  { background-color: var(--v-light); }
+
+.bg-produkte:nth-child(even) {
+  background-color: #f6f7f0;
+}
+
+.video {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.polaroid {
+  padding: 0.4rem 0.4rem 5rem 0.4rem;
+  border: 1px solid var(--dark);
+}
+
+.border-img { border: 2px solid var(--dark);}
 
 .bg-image {
     background-color: var(--light); /* Set a fall-back color while images are loading */ 
@@ -178,8 +208,15 @@ a.bg-image { display: block;}
 .uppercase    { text-transform: uppercase; }
 
 body {
-  font-family: 'Mulish', serif;  /* Add your font here */ 
+  font-family: 'Erica One', sans-serif;  /* Add your font here */ 
   color: var(--dark-text);
+  overflow-x: hidden;
+
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 4rem;
 }
 
 h2, h3, h4, h5, h6 {
@@ -187,8 +224,115 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 1.2rem;
 }
 
-h2 { font-size: 2rem; }
-h3 { font-size: 1.8rem; }
+.text-lila {
+  color: var(--medium);
+}
+
+.accent-font {
+  font-size: 5rem;
+  font-family: 'Erica One', sans-serif; 
+  color: var(--medium);
+}
+
+.h1-shop { 
+  font-size: 24.9rem;
+  line-height: 1; 
+ }
+
+ @media (max-width: 1244px) {
+  .h1-shop {
+    font-size: calc(1em + 31vw);
+  }
+ }
+
+ @media (max-width: 846px) {
+  .h1-shop {
+    font-size: calc(1em + 28vw);
+    margin-top: 1.5rem;
+  }
+}
+
+.h1-custom {
+  font-size: 10rem;
+  font-family: 'Erica One', sans-serif; 
+  color: var(--light);
+  writing-mode: vertical-rl;
+  line-height: 1; /* Adjusts space between letters */
+  letter-spacing: 0; /* Ensures no extra space between letters */
+  white-space: nowrap; /* Prevents breaks between words */
+  font-weight: 400;
+}
+
+.h1-custom-2 {
+  font-size: 6rem;
+  font-family: 'Erica One', sans-serif; 
+  text-align: left;
+  font-weight: 400;
+}
+
+@media (max-width: 1242px) {
+  .h1-custom-2 {
+    font-size: calc(0.7em + 6.3vw);
+  }
+}
+
+@media (max-width: 782px) {
+  .h1-custom-2 {
+    font-size: calc(0.3em + 5.6vw);
+  }
+}
+
+.h2-custom-1 {
+  font-size: 6.2rem;
+  font-family: 'Erica One', sans-serif; 
+  font-weight: 400;
+}
+
+.h2-custom-2 {
+  font-size: 4rem;
+  font-family: 'Erica One', sans-serif; 
+  font-weight: 400;
+}
+
+.h2-custom-3 {
+  font-size: 4rem;
+  font-family: 'Erica One', sans-serif; 
+  writing-mode: vertical-rl;
+  line-height: 1; /* Adjusts space between letters */
+  letter-spacing: 0; /* Ensures no extra space between letters */
+  white-space: nowrap; /* Prevents breaks between words */
+  font-weight: 400;
+  transform: rotate(180deg);
+}
+
+.h2-container {
+  display: flex;        /* Use flexbox to stack the elements */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start */
+}
+
+.h2-custom-4 {
+  font-size: 3rem;
+  font-family: 'Erica One', sans-serif; 
+  font-weight: 400;
+}
+
+
+.poster-link {
+  transform: rotate(-90deg);
+}
+
+h2 { 
+  font-size: 3.7rem;
+  font-family: 'Erica One', sans-serif; 
+  letter-spacing: 1px;
+  font-weight: 400;
+ }
+
+h3 { 
+  font-size: 2.5rem;
+  font-weight: 400;
+ }
 h4 { font-size: 1.6rem; }
 h5 { font-size: 1.4rem; }
 h6 { font-size: 1.2rem; }
@@ -196,9 +340,17 @@ h6 { font-size: 1.2rem; }
 p, li {
   line-height: 1.4; 
   margin-bottom: 1rem;
-  font-family: 'Martel', serif; 
+  font-family: 'Share Tech Mono', monospace; 
   font-weight: 200;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: var(--dark);
+}
+.copyright-sign {
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 2rem;
 }
 
 h2:last-child, 
@@ -211,7 +363,7 @@ p:last-child {
 }
 
 /* Unique Typography Styles  */
-.emphasis       { font-size: 1.2rem; }
+.emphasis       { font-size: 1.5rem; font-weight: 500; }
 .text-featured  { color: var(--featured-text);}
 .text-light     { color: var(--light-text);}
 .subtle         { opacity: 0.8;     }
@@ -233,30 +385,75 @@ a {
     color: inherit;
 }
 
-a:hover {
-  color: var(--featured-text); 
-}
 
 p a {
     text-decoration: none;
     border-bottom: 1px solid;
 }
 
-p a:hover { 
-  color: var(--featured-text); 
+a {
+  text-decoration: none;
 }
 
-.button { 
+p { 
+  color: var(--dark); 
+}
+
+.copyright {
+  color: white;
+  margin-bottom: -1rem;
+  font-size: 0.9rem;
+}
+
+.link-box-over {
+  padding: 0.25rem 1rem;
+  display: inline-block;
+}
+
+.link-box {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline {
+  background-color: var(--v-light);
+  height: 0;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 10rem;
+}
+
+.link-box:hover .link-underline {
+  height: 15px;
+}
+
+.button-text { 
     display: inline-block;
     text-decoration: none;
     line-height: 1;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid;
+    font-family: "Erica One", sans-serif;
+    font-size: 2.2rem;
+    color: var(--dark);
 }
 
-.button:hover {
-    color: var(--featured-text);
+.button-underline {
+  background-color: var(--v-light);
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s;
+  bottom: 0;
+  z-index: -1;
 }
+
+
+.button-div:hover .button-underline {
+  height: 10px;
+}
+
 
 .subtle-button {
   text-decoration: none;
@@ -266,22 +463,365 @@ p a:hover {
 /* suggested additional styles 
 - .button-inverted, .button-subtle, .button-lg  */
 
+/* ------------ Position Absolute -------------- */
+
+.pa1 {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+}
+
+.pa2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.pa3 {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: "Erica One", sans-serif;
+  font-size: 6rem;
+  color: var(--medium);
+  font-weight: 400;
+}
+
+.pa4 {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 2rem;
+  color: var(--medium);
+}
+
+.pa5 {
+  position: absolute;
+  width: 42rem;
+  bottom: -10rem;
+  right: -9rem;
+}
+
+.pa6 {
+  position: absolute;
+  top: -20rem;
+  width: 20rem;
+  right: 4rem;
+}
+
+.pa7 {
+  position: absolute;
+  right: -2rem;
+  bottom: 0;
+}
+
+.pa8 {
+  position: absolute;
+  right: -9rem;
+  transform: rotate(-90deg);
+  bottom: 7rem;
+}
+
+.pa9 {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 10rem;
+  animation: rotation 15s infinite linear;
+  z-index: 2;
+}
+
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.pa10 {
+  position: absolute;
+  width: 42rem;
+  top: -11%;
+  left: -9rem;
+}
+
+.pa11 {
+  position: absolute;
+  top: -2rem;
+  left: 10rem;
+  width: 30rem;
+}
+
+.pa12 {
+  position: absolute;
+  top: -2rem;
+  right: 11rem;
+  width: 30rem;
+}
+
+.pa13 {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  font-family: "Erica One", sans-serif;
+  font-size: 3rem;
+  color: var(--medium);
+  font-weight: 400;
+}
+
+.pa14 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: "Erica One", sans-serif;
+  font-size: 3.5rem;
+  color: var(--medium);
+  font-weight: 400;
+}
+
+
+.flex-flip-normal {
+  flex-flow:row-reverse wrap;
+}
+
+
+
+/* ------------ CREATIVE SHOP EFFECT -------------- */
+
+.shop-line {
+  width: 50%;
+  position: absolute;
+  height: 14px;
+  background-color: var(--v-light);
+  transform: translateX(100%);
+  border-radius: 10rem;
+  transition: 0.5s;
+}
+
+.shop-button-huge:hover .shop-line {
+  transform: translateX(0);
+}
+
+.title-word {
+  animation: color-animation 4s linear infinite;
+  font-family: "Erica One", sans-serif;
+  font-size: 22rem;
+}
+
+.title-word-1 {.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+
+
+
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+/* Here are just some visual styles. 🖌 */
+
+.container {
+  display: grid;
+  place-items: center;  
+  text-align: center;
+  height: 100vh
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 8.5vw;
+  text-transform: uppercase;
+}
+
+
+
+
+#test {
+  background: linear-gradient(var(--v-light), var(--v-light)) left no-repeat, var(--light);
+  background-size: 0% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-in-out;
+}
+
+#test:hover {
+  background-size: 100% 100%;
+}
+
+
+
+
+/* Pop Up Light Gallery */
+
+.portfolio {
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.gallery {
+  overflow: auto; /* Or overflow: hidden, depending on your need */
+}
+.lg-sub-html {
+  background-color: black !important;
+}
+
+.lg-sub-html h4 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: 'Erica One', sans-serif; 
+}
+
+
+.lg-backdrop.in {
+  opacity: 1;
+} 
+
+.lg-backdrop {
+  background-color: black;
+}
+
+.lg-toolbar .lg-icon {
+  color: white;
+}
+
+.lg-counter {
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.lg-next, .lg-prev {
+  color: white;
+  background-color: transparent;
+}
+
+.lg-next {
+  right: 8px;
+}
+
+.lg-prev {
+  left: 8px;
+}
+
+.lg-sub-html {
+  background-color: var(--light);
+}
+
+.lg-outer .lg-object{
+  max-height: 90vh;
+  max-width: 80vw;
+}
+
+.lg-next:hover {
+  background-color: transparent !important;
+}
+
+/* .lg-next:hover:not(.disabled), .lg-prev:hover:not(.disabled) {
+  color: var(--dark-text);
+} */
 
 /* ------------ Header & Hamburger Menu -------------- */
 header {
     padding: 1rem 5%;
 }
 
-nav a {
-    padding: 0.25rem 0.5rem;
+header nav a {
     display: inline-block;
     text-decoration: none;
-}
-nav a:hover {
-  color: var(--featured-text);
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--dark);
+    font-size: 1.7rem;
 }
 
+.fa-instagram {
+  font-size: 4rem !important;
+  margin-top: 1rem;
+}
+
+.sub-links {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.pajurama {
+  color: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+
 /* ------------ Footer Styles -------------- */
+
+.email-footer {
+  border: 3px solid var(--v-light);
+  border-radius: 10rem;
+  display: inline-block;
+  font-size: 2rem;
+  font-family: "Share Tech Mono", monospace;
+  padding: 0.5rem 1rem ;
+}
 
 footer a {
   text-align: center;
@@ -292,12 +832,13 @@ footer a {
 }
 
 footer nav a {
-  text-align: right;
+  text-align: left;
   display: block;
   text-decoration: none;
   padding: 0.2rem 0 0.2rem 0.2rem;
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 .fa-brands {
@@ -307,7 +848,7 @@ footer nav a {
 
 
 .pajurama-logo {
-  width: 6rem;
+  width: 8rem;
   border-bottom: none;
 }
 
@@ -398,7 +939,7 @@ footer nav a {
   margin-bottom: 10px;
 }
 .burger-button.active span{
-  border-color: var(--light);
+  border-color: white;
   background-color:white;
 }
 
@@ -419,6 +960,8 @@ footer nav a {
   top: 8px;
   transform: rotateZ(45deg);
 }
+
+.min-100 { min-width: 100%;}
 
 .burger-button.active .burger-middle{
 /*   transform: rotateZ(270deg); */
@@ -465,7 +1008,7 @@ footer nav a {
 }
 
 .mobile-menu {
-  background-color: var(--featured);
+  background-color: var(--light);
   padding: 0 5% 5% 5%;
   position: fixed; 
   z-index: 1;
@@ -482,7 +1025,16 @@ footer nav a {
 
 .mobile-menu.active {
   right: 0;
-  left: 20vw;
+  left: 0;
+}
+
+.mobile-menu-nav {
+  margin-top: 2em;
+}
+
+.mobile-menu-nav a{
+  font-size: 1.9rem !important;
+  font-weight: 400;
 }
 
 .logo-mobile-menu {
@@ -494,11 +1046,9 @@ footer nav a {
 }
 
 .mobile-menu a {
-  font-family: 'Poiret One', sans-serif;
   display: block;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
-  color: var(--dark-text)
 } 
 
 .mobile-nav {
@@ -507,6 +1057,10 @@ footer nav a {
   display: block
 }
 
+.mobile-logo {
+  margin-top: 1rem;
+  width: 12rem;
+}
 
 /* ------------ Contact Forms  ----------------------- */
 
@@ -521,8 +1075,8 @@ select {
   padding: 0.5rem;
   font-family: inherit;
   font-size: 1rem;
-  border: 2px solid var(--medium);
-  color: var(--dark-text);
+  border: 2px solid var(--dark);
+  color: var(--dark);
   background-color: white;
 }
 
@@ -533,15 +1087,16 @@ option {
   padding: 0.5rem;
   font-family: inherit;
   font-size: 1rem;
-  border: 2px solid var(--medium);
-  color: var(--dark-text);
+  border: 2px solid var(--dark);
+  color: var(--dark);
   background-color: white;
 }
 
 label {
   line-height: 1.8rem;
-  color: var(--dark-text);
+  color: var(--dark);
   font-size: 1.2rem;
+  font-family: "Share Tech Mono", monospace;
 }
 
 input, textarea {
@@ -551,38 +1106,46 @@ input, textarea {
   padding: 0.5rem;
   font-family: inherit;
   font-size: 1rem;
-  border: 2px solid var(--medium);
-  color: var(--dark-text);
+  border: 2px solid var(--dark);
+  color: var(--dark);
   background-color: white;
+  font-family: "Share Tech Mono", monospace;
+}
+
+textarea::placeholder {
+  color: var(--dark);
 }
 
            
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid var(--light);
+  border: 2px solid var(--dark);
 }
 
 
 textarea {
   height: 20vh;
+  color: var(--dark);
 }
 
 button {
     font-size: 1.2rem;
     display: inline-block;
     text-decoration: none;
-    border: 1px solid var(--medium);
+    border: 1px solid var(--dark);
     text-align: center;
     background-color: transparent;
     cursor: pointer;
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Erica One', sans-serif;
     padding: 0.5rem 1rem;
+    color: var(--dark);
 }
 
 button:hover {
-  border: 1px solid var(--light);
+ background-color: var(--dark);
+ color: white;
 }
 
 /* ------------ Blogging elements  ----------------------- */
@@ -625,18 +1188,43 @@ hr.short.center {
 	display: none; 
 }
 
-.inline { 
-  display: inline-block;
-  vertical-align: top;
-}
 
-/* ------- MD Media Query (64em / 1024px) --------------- */ 
+
+/* ------- MD Media Query (75em / 1200px) --------------- */ 
 /* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */ 
 
-@media(max-width:64em) {
+@media(max-width:75em) {
 
 	.show-md { display: block; }
 	.hide-md { display: none;  }
+
+  h2 {
+    font-size: 2.7rem;
+  }
+
+  .h1-custom {
+    font-size: 9rem;
+  }
+
+  .h2-custom-4 {
+    font-size:2.7rem;
+  }
+
+  .pa3 {
+    font-size: 5rem;
+  }
+
+  .h2-custom-1 {
+    font-size: 4.6rem;
+  }
+
+  .email-footer {
+    font-size: 1.7rem;
+  }
+
+  .pa13 {
+    font-size: 2.8rem;
+  }
 
 }
 
@@ -645,6 +1233,16 @@ hr.short.center {
 
 
 @media(max-width:48em) {
+
+  .pa10 {
+    position: static;
+    width: unset;
+  }
+  .sm-padded-0 { padding: 0;}
+  .sm-padded-t-1 {
+    padding-top: 1rem;
+  }
+  .sm-padded-t-2 { padding-top: 2rem;}
 
 	.show-sm { display: block; }
 	.hide-sm { display: none;  }
@@ -667,12 +1265,104 @@ hr.short.center {
   .sm-portrait      { padding-bottom: 125%; }
   .sm-square        { padding-bottom: 100%; }
 
+  .portfolio {
+    column-count: 2;
+}
+
+.pa14 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+.pa5 {
+  position: absolute;
+  width: 42rem;
+  bottom: -8rem;
+  right: -9rem;
+}
+
+.pa3 {
+  font-size: 3rem;
+}
+
+.h2-custom-1 {
+  font-size: 3.2rem;
+}
+
+.sm-padded { padding: 5%;}
+.sm-padded-t-0 { padding-top: 0;}
+
+.pa6 {
+  position: absolute;
+  top: -5rem;
+  width: 20rem;
+  right: 4rem;
+}
+
+.sm-center { text-align: center;}
+footer nav a {
+  text-align: center;
+}
+footer nav { margin-bottom: 1.4rem;}
+
+.pa13 {
+  font-size: 2.2rem;
+}
+
+.pa9 {
+  width: 8rem;
+}
+
+.h2-custom-4 {
+  font-size: 2.5rem;
+}
+
+.pa7 {
+  position: absolute;
+  right: -0.4rem;
+  bottom: 0;
+}
+
 }
 
 /* ------- XS Media Query (36em / 576px) --------------- */ 
 /* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */ 
 
 @media(max-width:36em) {
+
+  .h2-custom-3 {
+    font-size: 2.5rem;
+  }
+  .h2-custom-2 {
+    font-size: 2.5rem;
+  }
+
+  .pa8 {
+    position: absolute;
+    right: -4rem;
+    transform: rotate(-90deg);
+    bottom: 3rem;
+  }
+
+  .pa7 {
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+  }
+
+.xs-margin-t-0 { margin-top: 0;}
+
+  h3 {
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
 
 		.show-xs { display: block; }
 		.hide-xs { display: none;  }
@@ -681,4 +1371,84 @@ hr.short.center {
       font-weight: 300;
       font-family: 'Martel', serif; 
     }
+
+    .portfolio {
+      column-count: 1;
+  }
+
+
+  .pa1 {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 13rem;
+  }
+
+  .pa5 {
+    position: static;
+    width: 0;
+  }
+
+  .margin-t-minus-16 {
+    margin-top: 0;
+    padding: 5%;
+  }
+
+  .xs-no-tall { min-height: none;}
+  .margin-t-minus-9 { margin-top: 0;}
+
+  .xs-flex-flip {
+    flex-flow: wrap-reverse;
+  }
+
+  .pa3 {
+    font-size: 2rem;
+  }
+
+  .pa4 {
+    font-size: 1rem;
+  }
+
+  .h2-custom-1 {
+    font-size: 2rem;
+  }
+
+
+  .button-text {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    font-family: "Erica One", sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark);
+  }
+  .pa6 {
+    position: absolute;
+    top: -5rem;
+    width: 20rem;
+    left: 100%;
+  }
+
+  .email-footer {
+    font-size: 1.2rem;
+  }
+
+  .pa13 {
+    font-size: 1rem;
+  }
+
+  .pa9 {
+    width: 5rem;
+    top: -1rem;
+    right: 0.3rem;
+  }
+
+  .h2-custom-4 {
+    font-size: 1.5rem;
+  }
+
+  .pa14 {
+    font-size: 1.3rem;
+  }
+  
 }
