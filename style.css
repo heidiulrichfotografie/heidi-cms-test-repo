@@ -430,6 +430,11 @@ p {
   height: 15px;
 }
 
+.z-index-plus {
+  position: relative;
+  z-index: 4;
+}
+
 .button-text { 
     display: inline-block;
     text-decoration: none;
@@ -475,7 +480,7 @@ p {
 
 .pa2 {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
 
