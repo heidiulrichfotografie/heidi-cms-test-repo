@@ -527,7 +527,7 @@ gallery:
 
 <section class="padded capped-width-v-narrow" id="bestellen">
     <div class="center editable text-lila">
-        <h2 class="margin-b-2"> Bestellformular </h2>
+        <h2 class="margin-b-2"> Bildanfrage </h2>
     </div>
     <form class="margin-t-2" action="https://formspree.io/f/xyzyapag" method="POST">
         <label for="_vorname"> Vorname </label>
@@ -535,12 +535,6 @@ gallery:
 
         <label for="_nachname"> Nachname </label>
         <input type="text" name="_nachname" id="_nachname" />
-
-        <label for="_adresse"> Strasse, Nr. </label>
-        <input type="text" name="_adresse" id="_adresse" />
-
-        <label for="_wohnort"> PLZ, Wohnort </label>
-        <input type="text" name="_wohnort" id="_wohnort" />
 
         <label for="_replyto"> Email </label>
         <input type="email" name="_replyto" id="_replyto" placeholder="" />
@@ -550,7 +544,8 @@ gallery:
         
         <label for="files">Screenshots</label>
         <input type="file" id="files" name="files" multiple />
-
+        <label for="Nachricht">Deine Nachricht</label>
+        <textarea id="nachricht"name="nachricht"rows="5"></textarea>
         
         <br>
    
