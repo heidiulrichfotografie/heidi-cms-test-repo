@@ -25,3 +25,33 @@ seo:
         <p><br /></p>
         <p></p>
     </div></section>
+
+<section class="padded capped-width-v-narrow" id="bestellen">
+    <div class="center editable text-lila">
+        <h2 class="margin-b-2"> Bildanfrage </h2>
+    </div>
+    <form class="margin-t-2" action="https://formspree.io/f/xyzyapag" method="POST">
+        <label for="_vorname"> Vorname </label>
+        <input type="text" name="_vorname" id="_vorname" />
+
+        <label for="_nachname"> Nachname </label>
+        <input type="text" name="_nachname" id="_nachname" />
+
+        <label for="_replyto"> Email </label>
+        <input type="email" name="_replyto" id="_replyto" placeholder="" />
+
+        <label for="phone"> Telefonnummer </label>
+        <input type="tel" id="phone" name="phone" pattern="+[0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}" placeholder="" />
+        
+        <label for="files">Screenshots</label>
+        <input type="file" id="files" name="files" multiple />
+        <label for="Nachricht">Deine Nachricht</label>
+        <textarea id="nachricht"name="nachricht"rows="5"></textarea>
+        
+        <br>
+   
+        <button type="submit" class="button"> Anfrage senden </button>
+
+    </form>
+
+</section>
