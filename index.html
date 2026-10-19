@@ -160,46 +160,56 @@ seo:
 
 
 <style>
-@media (max-width: 767px) {
+.spruch-mobil {
+  width: 100%;
+  max-width: 1000px;
+  margin: 45px auto 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
-  /* Lila Spruch */
+.spruch-mobil h2 {
+  color: #D9A3D9 !important;
+  font-size: 32px !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.spruch-mobil::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #D9A3D9;
+  margin: 30px auto 0;
+}
+
+@media (max-width: 767px) {
   .spruch-mobil {
     margin: 65px auto 0 !important;
     padding: 0 20px !important;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
   }
 
   .spruch-mobil h2 {
-    color: #D9A3D9 !important;
     font-size: clamp(20px, 5vw, 25px) !important;
     line-height: 1.4 !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
-  /* Kleine lila Linie */
   .spruch-mobil::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #D9A3D9;
-    margin: 35px auto 0;
+    margin-top: 35px;
   }
 
-  /* Abstand zum grünen Text */
   .spruch-mobil + section {
     margin-top: 55px !important;
   }
 
-  /* Grüner Beschreibungstext */
   .spruch-mobil + section p {
     line-height: 1.8 !important;
     margin-bottom: 40px !important;
   }
-
 }
 </style>
 
