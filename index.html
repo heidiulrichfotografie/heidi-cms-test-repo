@@ -161,14 +161,52 @@ seo:
 
 <style>
 @media (max-width: 767px) {
+
+  /* Lila Spruch */
   .spruch-mobil {
-    margin-top: 5px !important;
+    margin: 65px auto 0 !important;
+    padding: 0 20px !important;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
   }
+
+  .spruch-mobil h2 {
+    color: #D9A3D9 !important;
+    font-size: clamp(24px, 6vw, 30px) !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Kleine lila Linie */
+  .spruch-mobil::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #D9A3D9;
+    margin: 35px auto 0;
+  }
+
+  /* Abstand zum grünen Text */
+  .spruch-mobil + section {
+    margin-top: 55px !important;
+  }
+
+  /* Grüner Beschreibungstext */
+  .spruch-mobil + section p {
+    line-height: 1.8 !important;
+    margin-bottom: 40px !important;
+  }
+
 }
 </style>
-<div class="spruch-mobil" style="margin: 15px auto; padding: 0 20px; text-align: center; width: 100%; box-sizing: border-box;">
-  <h2 style="color: #D9A3D9; font-size: clamp(20px, 3vw, 28px); line-height: 1.4; text-align: center; width: 100%; margin: 0; padding: 0;">
-    «Ich fotografiere die Berge nicht nur – ich erlebe sie.»
+
+<div class="spruch-mobil">
+  <h2>
+    «Ich fotografiere die Berge nicht nur –
+    ich erlebe sie.»
   </h2>
 </div>
 
